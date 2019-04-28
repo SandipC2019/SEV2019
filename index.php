@@ -50,11 +50,12 @@ if ($_GET['code']) {
 			
 			session_start();
 			$_SESSION['username'] = $user->display_name;
-			$home_link = htmlspecialchars("home.php");
+			$getFavStreamer_link = htmlspecialchars("getFavStreamer.php");
+			header("Location: getFavStreamer.php");
 
-            echo '<div style="background-color: #888888; margin-top: 50px; height:250px; padding-top: 190px;" align="center">'.
+            echo '<div style="background-color: #6441A4; margin-top: 50px; height:250px; padding-top: 190px;" align="center">'.
 			'<p style="color: cyan; font-size: 35px; font-weight: bold; ">Welcome User ' . $_SESSION['username'] . ' </p>'.
-			'<p><a href="' .$home_link. '" style="color: cyan; font-size: 25px; font-weight: bold; ">Please Click this Link to Proceed</a></p>'.
+			'<p><a href="' .$getFavStreamer_link. '" style="color: cyan; font-size: 25px; font-weight: bold; ">Please Click this Link to Proceed</a></p>'.
 			'</div>';
 
             
@@ -83,7 +84,7 @@ if ($_GET['code']) {
     $auth_url .= '&scope=' . $req_scope;
     $auth_url .= '&force_verify=true';
 
-    echo '<div style="background-color: #888888; margin-top: 50px; height:250px; padding-top: 210px;" align="center">'.
+    echo '<div style="background-color: #6441A4; margin-top: 40px; height:430px; padding-top: 150px;" align="center">'.
 	'<a href="' . $auth_url . '" style="color: cyan; font-size: 35px; font-weight: bold; ">Please Click this Link to Authenticate with Twitch</a></div>'.
 	'</div>';
 }
